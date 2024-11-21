@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    
+
     <h5 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>GESTIÓN CLIENTES</h5>
   </div>
   <br>
@@ -11,10 +11,12 @@
           <span class="input-group-text custom-span me-2">DNI/NIE:</span>
           <input type="text" class="form-control sm w-25" placeholder="DNI-NIE" v-model="cliente.dni"
             @blur="validarDNI(this.cliente.dni)" :disabled="editDni">
+          <button class="btn btn-outline" type="submit" @click.prevent="buscarcliente(cliente.dni)"> <i
+              class="bi bi-search"></i></button>
 
           <span class="input-group-text custom-span ms-auto me-2">Fecha Alta:</span>
           <input type="date" class="form-control sm w-25" placeholder="Fecha Alta" v-model="cliente.alta">
-         
+
         </div>
         <div class="input-group-text mb-3">
           <span class="input-group-text custom-span me-2">Apellidos: </span>
@@ -84,8 +86,8 @@
             <tbody>
               <tr v-for="cliente in clientePorPagina" :key="cliente.id">
                 <td class="align-middle">{{ cliente.dni }}</td>
-                <td class="align-middle">{{ cliente.apellidos }}</td>
-                <td class="align-middle">{{ cliente.nombre }}</td>
+                <td class="align-middle text-start">{{ cliente.apellidos }}</td>
+                <td class="align-middle text-start">{{ cliente.nombre }}</td>
                 <td class="align-middle">{{ cliente.email }}</td>
                 <td class="align-middle">{{ cliente.telefono }}</td>
                 <td class="align-middle">{{ cliente.baja }}</td>
@@ -167,7 +169,7 @@ export default {
 
 
   computed: {
-    clientePorPagina(){
+    clientePorPagina() {
       const cleintesFiltrados = this.filtroClientes;
       const indiceInicial = (this.currentPage - 1) * this.pageSize;
       return cleintesFiltrados.slice(indiceInicial, indiceInicial + this.pageSize)
@@ -191,16 +193,39 @@ export default {
   },
 
   methods: {
-    siguientePagina(){
-      if(this.currentPage * this.pageSize < this.clientes.length){
+    async buscarcliente(dni) {
+      if (!dni) {
+        this.mostrarAlerta('Error', 'Introduce un DNI', 'error')
+      } else {
+        const response = await fetch('http://localhost:3000/clientes');
+        if (!response.ok) {
+          throw new Error('Error en la solicitud: ' + response.statusText);
+        }
+        const clientes = await response.json();
+
+        // Encontrar el cliente por su DNI
+        const clienteEncontrado = clientes.find(c => c.dni === dni);
+        if (!clienteEncontrado) {
+          this.mostrarAlerta('Error', 'Cliente no existente', 'error')
+        } else {
+
+          this.seleccionaCliente(clienteEncontrado);
+        }
+      }
+
+
+    },
+
+    siguientePagina() {
+      if (this.currentPage * this.pageSize < this.clientes.length) {
         this.currentPage++;
       }
     },
 
 
-    
-    paginaAnterior(){
-      if(this.currentPage > 1){
+
+    paginaAnterior() {
+      if (this.currentPage > 1) {
         this.currentPage--;
       }
     },

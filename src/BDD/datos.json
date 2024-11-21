@@ -32710,7 +32710,7 @@
   "clientes": [
     {
       "id": "96e3",
-      "dni": "90095911N",
+      "dni": "18602887G",
       "alta": "2022-10-18",
       "apellidos": "Ramires",
       "nombre": "Catalina",
@@ -32729,7 +32729,7 @@
     },
     {
       "id": "ba73",
-      "dni": "Y9654813W",
+      "dni": "43695051L",
       "alta": "2020-12-10",
       "apellidos": "Dominguez",
       "nombre": "Pedro",
@@ -32748,7 +32748,7 @@
     },
     {
       "id": "cf21",
-      "dni": "X2948572B",
+      "dni": "50504526E",
       "alta": "2019-07-23",
       "apellidos": "Martínez",
       "nombre": "Ana",
@@ -32766,7 +32766,7 @@
     },
     {
       "id": "hr64",
-      "dni": "Z1837465N",
+      "dni": "40283192A",
       "alta": "2021-03-15",
       "apellidos": "García",
       "nombre": "Luis",
@@ -32784,7 +32784,7 @@
     },
     {
       "id": "lm92",
-      "dni": "Y8472619P",
+      "dni": "03516706Y",
       "alta": "2022-09-09",
       "apellidos": "Sánchez",
       "nombre": "María",
@@ -32802,7 +32802,7 @@
     },
     {
       "id": "vx35",
-      "dni": "W5698321L",
+      "dni": "65963206B",
       "alta": "2020-05-18",
       "apellidos": "Pérez",
       "nombre": "Carlos",
@@ -32820,7 +32820,7 @@
     },
     {
       "id": "b4a2",
-      "dni": "53974821P",
+      "dni": "69006265D",
       "alta": "2024-11-13",
       "apellidos": "Gonzalez",
       "nombre": "Esteban",
@@ -32839,7 +32839,7 @@
     },
     {
       "id": "072a",
-      "dni": "12345678Z",
+      "dni": "79647264N",
       "alta": "2024-10-15",
       "apellidos": "Martínez",
       "nombre": "Lucía",
@@ -32858,7 +32858,7 @@
     },
     {
       "id": "073b",
-      "dni": "87654321X",
+      "dni": "67658756R",
       "alta": "2024-09-20",
       "apellidos": "Gómez",
       "nombre": "Carlos",
@@ -32877,7 +32877,7 @@
     },
     {
       "id": "074c",
-      "dni": "23456789L",
+      "dni": "43143546P",
       "alta": "2024-08-25",
       "apellidos": "Fernández",
       "nombre": "Ana",
@@ -32893,333 +32893,9 @@
         "nm": "Sevilla"
       },
       "baja": ""
-    },
-    {
-      "id": "075d",
-      "dni": "34567890K",
-      "alta": "2024-07-12",
-      "apellidos": "López",
-      "nombre": "Miguel",
-      "direccion": "Calle Larios, 9",
-      "email": "miguellopez@example.com",
-      "telefono": "623478951",
-      "provincia": {
-        "id": "29",
-        "nm": "Málaga"
-      },
-      "municipio": {
-        "id": "29067",
-        "nm": "Málaga"
-      },
-      "baja": ""
-    },
-    {
-      "id": "076e",
-      "dni": "45678901R",
-      "alta": "2024-06-30",
-      "apellidos": "Sánchez",
-      "nombre": "Elena",
-      "direccion": "Plaza del Ayuntamiento, 10",
-      "email": "elenasanchez@example.com",
-      "telefono": "612345789",
-      "provincia": {
-        "id": "46",
-        "nm": "Valencia"
-      },
-      "municipio": {
-        "id": "46250",
-        "nm": "Valencia"
-      },
-      "baja": ""
-    },
-    {
-      "id": "077f",
-      "dni": "56789012T",
-      "alta": "2024-05-18",
-      "apellidos": "Pérez",
-      "nombre": "María",
-      "direccion": "Calle Ancha, 42",
-      "email": "mariaperez@example.com",
-      "telefono": "600123456",
-      "provincia": {
-        "id": "03",
-        "nm": "Alicante"
-      },
-      "municipio": {
-        "id": "03063",
-        "nm": "Elche"
-      },
-      "baja": ""
-    },
-    {
-      "id": "078g",
-      "dni": "67890123S",
-      "alta": "2024-04-10",
-      "apellidos": "Ramírez",
-      "nombre": "Juan",
-      "direccion": "Rúa Real, 15",
-      "email": "juanramirez@example.com",
-      "telefono": "611234567",
-      "provincia": {
-        "id": "15",
-        "nm": "A Coruña"
-      },
-      "municipio": {
-        "id": "15030",
-        "nm": "Ferrol"
-      },
-      "baja": ""
-    },
-    {
-      "id": "079h",
-      "dni": "78901234Q",
-      "alta": "2024-03-28",
-      "apellidos": "Navarro",
-      "nombre": "Luis",
-      "direccion": "Calle Navarra, 50",
-      "email": "luisnavarro@example.com",
-      "telefono": "622345678",
-      "provincia": {
-        "id": "48",
-        "nm": "Bizkaia"
-      },
-      "municipio": {
-        "id": "48020",
-        "nm": "Bilbao"
-      },
-      "baja": ""
-    },
-    {
-      "id": "080i",
-      "dni": "89012345P",
-      "alta": "2024-02-15",
-      "apellidos": "Molina",
-      "nombre": "Carmen",
-      "direccion": "Avenida Alcalde Álvaro Domecq, 35",
-      "email": "carmenmolina@example.com",
-      "telefono": "633456789",
-      "provincia": {
-        "id": "11",
-        "nm": "Cádiz"
-      },
-      "municipio": {
-        "id": "11027",
-        "nm": "Jerez de la Frontera"
-      },
-      "baja": ""
-    },
-    {
-      "id": "081j",
-      "dni": "90123456D",
-      "alta": "2024-01-20",
-      "apellidos": "Ortiz",
-      "nombre": "Rosa",
-      "direccion": "Carrer del Vent, 8",
-      "email": "rosaortiz@example.com",
-      "telefono": "644567890",
-      "provincia": {
-        "id": "43",
-        "nm": "Tarragona"
-      },
-      "municipio": {
-        "id": "43148",
-        "nm": "Reus"
-      },
-      "baja": ""
-    },
-    {
-      "id": "082k",
-      "dni": "23456780A",
-      "alta": "2023-12-05",
-      "apellidos": "Herrera",
-      "nombre": "Manuel",
-      "direccion": "Avenida de Andalucía, 12",
-      "email": "manuelherrera@example.com",
-      "telefono": "655678901",
-      "provincia": {
-        "id": "21",
-        "nm": "Huelva"
-      },
-      "municipio": {
-        "id": "21041",
-        "nm": "Huelva"
-      },
-      "baja": ""
-    },
-    {
-      "id": "083l",
-      "dni": "34567890B",
-      "alta": "2023-11-18",
-      "apellidos": "Rubio",
-      "nombre": "Sergio",
-      "direccion": "Calle Menéndez Pelayo, 3",
-      "email": "sergiorubio@example.com",
-      "telefono": "666789012",
-      "provincia": {
-        "id": "33",
-        "nm": "Asturias"
-      },
-      "municipio": {
-        "id": "33024",
-        "nm": "Gijón"
-      },
-      "baja": ""
-    },
-    {
-      "id": "084m",
-      "dni": "45678901C",
-      "alta": "2023-10-03",
-      "apellidos": "Castro",
-      "nombre": "Isabel",
-      "direccion": "Calle Isabel II, 18",
-      "email": "isabelcastro@example.com",
-      "telefono": "677890123",
-      "provincia": {
-        "id": "39",
-        "nm": "Cantabria"
-      },
-      "municipio": {
-        "id": "39075",
-        "nm": "Santander"
-      },
-      "baja": ""
-    },
-    {
-      "id": "085n",
-      "dni": "56789012E",
-      "alta": "2023-09-22",
-      "apellidos": "Vega",
-      "nombre": "Andrés",
-      "direccion": "Paseo de la Independencia, 22",
-      "email": "andresvega@example.com",
-      "telefono": "688901234",
-      "provincia": {
-        "id": "50",
-        "nm": "Zaragoza"
-      },
-      "municipio": {
-        "id": "50297",
-        "nm": "Zaragoza"
-      },
-      "baja": ""
-    },
-    {
-      "id": "086o",
-      "dni": "67890123F",
-      "alta": "2023-08-16",
-      "apellidos": "Jiménez",
-      "nombre": "Sara",
-      "direccion": "Plaza Mayor, 7",
-      "email": "sarajimenez@example.com",
-      "telefono": "699012345",
-      "provincia": {
-        "id": "13",
-        "nm": "Ciudad Real"
-      },
-      "municipio": {
-        "id": "13045",
-        "nm": "Ciudad Real"
-      },
-      "baja": ""
-    },
-    {
-      "id": "087p",
-      "dni": "78901234G",
-      "alta": "2023-07-30",
-      "apellidos": "Santos",
-      "nombre": "Laura",
-      "direccion": "Calle Reyes Católicos, 19",
-      "email": "laurasantos@example.com",
-      "telefono": "700123456",
-      "provincia": {
-        "id": "18",
-        "nm": "Granada"
-      },
-      "municipio": {
-        "id": "18179",
-        "nm": "Granada"
-      },
-      "baja": ""
-    },
-    {
-      "id": "088q",
-      "dni": "89012345H",
-      "alta": "2023-06-11",
-      "apellidos": "Gil",
-      "nombre": "Francisco",
-      "direccion": "Avenida de Fernández Ladreda, 10",
-      "email": "franciscogil@example.com",
-      "telefono": "611234567",
-      "provincia": {
-        "id": "40",
-        "nm": "Segovia"
-      },
-      "municipio": {
-        "id": "40005",
-        "nm": "Alconada de Maderuelo"
-      },
-      "baja": ""
-    },
-    {
-      "id": "089r",
-      "dni": "90123456J",
-      "alta": "2023-05-07",
-      "apellidos": "Iglesias",
-      "nombre": "Roberto",
-      "direccion": "Calle Mayor Principal, 6",
-      "email": "robertoiglesias@example.com",
-      "telefono": "622345678",
-      "provincia": {
-        "id": "34",
-        "nm": "Palencia"
-      },
-      "municipio": {
-        "id": "34120",
-        "nm": "Palencia"
-      },
-      "baja": ""
-    },
-    {
-      "id": "090s",
-      "dni": "23456789K",
-      "alta": "2023-04-12",
-      "apellidos": "Domínguez",
-      "nombre": "Cristina",
-      "direccion": "Calle Magí Morera, 4",
-      "email": "cristinadominguez@example.com",
-      "telefono": "633456789",
-      "provincia": {
-        "id": "25",
-        "nm": "Lleida"
-      },
-      "municipio": {
-        "id": "25120",
-        "nm": "Lleida"
-      },
-      "baja": ""
-    },
-    {
-      "id": "091t",
-      "dni": "34567890L",
-      "alta": "2023-03-19",
-      "apellidos": "Vidal",
-      "nombre": "Mario",
-      "direccion": "Carrer de Sant Miquel, 2",
-      "email": "mariovidal@example.com",
-      "telefono": "644567890",
-      "provincia": {
-        "id": "07",
-        "nm": "Islas Baleares"
-      },
-      "municipio": {
-        "id": "07040",
-        "nm": "Palma de Mallorca"
-      },
-      "baja": ""
     }
   ],
   "candidatos": [
-    
     {
       "id": "c0fd",
       "apellidos": "erwr",
