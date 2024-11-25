@@ -32906,7 +32906,21 @@
         "id": "01004",
         "nm": "logistica"
       },
-      "modalidad": "remoto"
+      "modalidad": "remoto",
+      "avisoLegal": "si"
+    },
+    {
+      "id": "e6ec",
+      "apellidos": "Aponte",
+      "nombre": "Johan",
+      "email": "johan@gmail.com",
+      "movil": "785362491",
+      "departamento": {
+        "id": "01",
+        "nm": "ventas"
+      },
+      "modalidad": "",
+      "avisoLegal": "si"
     }
   ],
   "departamentos": [

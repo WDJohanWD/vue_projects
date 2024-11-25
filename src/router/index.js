@@ -1,9 +1,11 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import PaginaInicio  from '@/components/PaginaInicio.vue'
 import TablaClientes from '@/components/TablaClientes.vue'
 import TablaContacto from '@/components/TablaContacto.vue'
 import TablaEmpleo    from '@/components/TablaEmpleo.vue'
 import NotFound from '@/components/NotFound.vue'
+import AvisoLegal from '@/components/AvisoLegal.vue'
+import PoliticaPrivacidad from '@/components/PoliticaPrivacidad.vue'
 
 
 const routes = [
@@ -31,11 +33,21 @@ const routes = [
     path: '/empleo',
     name: 'empleo',
     component: TablaEmpleo
+  },
+  {
+    path: '/avisolegal',
+    name: 'avisolegal',
+    component: AvisoLegal
+  },
+  {
+    path: '/privacidad',
+    name: 'privacidad',
+    component: PoliticaPrivacidad
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
