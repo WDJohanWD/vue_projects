@@ -1,6 +1,5 @@
 <template>
-    <div id="navbar" class = 'container'>
-        <nav class = "navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class = "navbar navbar-expand-lg navbar-dark bg-primary w-100" >
         <div class = "container-fluid">
           <button class = "navbar-toggler" 
           type = "button" 
@@ -31,7 +30,6 @@
     </div>
         </div>
         </nav>
-    </div>
     <router-view />
 </template>
 
@@ -47,4 +45,5 @@ export default{
     font-size: 1.1rem; /* Aumenta un poco el tamaño de la fuente */
     transition: font-size 0.5s ease; /* con una transición suave */
 }
+
 </style>
