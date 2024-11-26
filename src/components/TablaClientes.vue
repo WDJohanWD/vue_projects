@@ -79,6 +79,7 @@
                 <th scope="col" class="w-20">Nombre</th>
                 <th scope="col" class="w-20 text-center">Email</th>
                 <th scope="col" class="w-10">Telefono</th>
+                <th scope="col" class="w-10">Tipo</th>
                 <th scope="col" class="w-10 text-center">Fecha Baja</th>
                 <th scope="col" class="pale-yellow table-warning">Acciones</th>
               </tr>
@@ -90,6 +91,7 @@
                 <td class="align-middle text-start">{{ cliente.nombre }}</td>
                 <td class="align-middle">{{ cliente.email }}</td>
                 <td class="align-middle">{{ cliente.telefono }}</td>
+                <td class="align-middle">{{ cliente.tipo }}</td>
                 <td class="align-middle">{{ cliente.baja }}</td>
                 <td class="text-center align-middle pale-yellow table-warning">
                   <div>
@@ -147,7 +149,8 @@ export default {
         provincia: '',
         municipio: '',
         baja: '',
-        telefono: ''
+        telefono: '',
+        tipo: 'usuario'
       },
 
       clientes: [],

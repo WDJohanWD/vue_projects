@@ -32724,7 +32724,8 @@
         "id": "36058",
         "nm": "Vilaboa"
       },
-      "baja": "",
+      "baja":"",
+      "tipo": "usuario",
       "telefono": "653435234"
     },
     {
@@ -32744,7 +32745,8 @@
         "id": "01037",
         "nm": "Arraia-Maeztu"
       },
-      "baja": ""
+     "baja":"",
+      "tipo": "usuario"
     },
     {
       "id": "cf21",
@@ -32762,7 +32764,9 @@
       "municipio": {
         "id": "10903",
         "nm": "Alagón del Río"
-      }
+      },
+      "baja":"",
+      "tipo": "usuario"
     },
     {
       "id": "hr64",
@@ -32780,7 +32784,9 @@
       "municipio": {
         "id": "01009",
         "nm": "Asparrena"
-      }
+      },
+      "baja":"",
+      "tipo": "usuario"
     },
     {
       "id": "lm92",
@@ -32798,7 +32804,9 @@
       "municipio": {
         "id": "24006",
         "nm": "Ardón"
-      }
+      },
+      "baja":"",
+      "tipo": "usuario"
     },
     {
       "id": "vx35",
@@ -32816,7 +32824,9 @@
       "municipio": {
         "id": "23009",
         "nm": "Baeza"
-      }
+      },
+      "baja":"",
+      "tipo": "usuario"
     },
     {
       "id": "b4a2",
@@ -32835,6 +32845,7 @@
         "nm": "Vigo"
       },
       "baja": "",
+      "tipo": "usuario",
       "telefono": "656345236"
     },
     {
@@ -32854,7 +32865,8 @@
         "id": "28079",
         "nm": "Madrid"
       },
-      "baja": ""
+      "baja": "",
+      "tipo": "usuario"
     },
     {
       "id": "073b",
@@ -32873,7 +32885,8 @@
         "id": "08012",
         "nm": "Avinyó"
       },
-      "baja": ""
+      "baja": "",
+      "tipo": "usuario"
     },
     {
       "id": "074c",
@@ -32892,7 +32905,28 @@
         "id": "41091",
         "nm": "Sevilla"
       },
-      "baja": ""
+      "baja": "",
+      "tipo": "usuario"
+    },
+    {
+      "id": "b951",
+      "dni": "Y9654813W",
+      "alta": "2024-11-01",
+      "apellidos": "Aponte Valencia",
+      "nombre": "Johan",
+      "direccion": "Travesia de vigo",
+      "email": "johan@gmail.com",
+      "provincia": {
+        "id": "01",
+        "nm": "Araba/Álava"
+      },
+      "municipio": {
+        "id": "01003",
+        "nm": "Aramaio"
+      },
+      "baja": "",
+      "telefono": "753268419",
+      "tipo": "usuario"
     }
   ],
   "candidatos": [
