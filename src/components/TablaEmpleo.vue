@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <h5 class="text-center front-weight-bold">TRABAJA CON NOSOTROS</h5>
+    <h5 class="mt-3 text-center front-weight-bold"><i class="bi bi-people">TRABAJA CON NOSOTROS</i></h5>
   </div>
   <br>
   <div class="container-fluid border p-4">
@@ -50,6 +50,11 @@
 
         </div>
         <div class="input-group-text mb-3">
+          <span  class="input-group-text custom-span ms-2 me-2" for="comentario">Comentario: </span>
+          <textarea  placeholder="Comentarios (Máximo 256 caracteres)" class="form-control sm w-100" maxlength="256" name="" id="" rows="4" v-model="candidato.comentario"  @blur="validarComentario(this.candidato.comentario)"></textarea>
+          
+        </div>
+        <div class="input-group-text mb-3">
 
           <span class="input-group-text custom-span ms-2 me-2">CV (PDF) </span>
           <input type="file" class="form-control sm w-100">
@@ -82,7 +87,8 @@ export default {
         movil: '',
         departamento: '',
         modalidad: '',
-        avisoLegal: ''
+        avisoLegal: '',
+        comentario:''
       },
       candidatos: [],
       departamentos: [],
@@ -115,6 +121,11 @@ export default {
       }
     },
 
+    validarComentario(comentario){
+      if(comentario.length > 256){
+        this.mostrarAlerta('Error','el comentario no puede sobre pasar 256 caracteres', 'error')
+      }
+    },
     mostrarAlerta(titulo, mensaje, icono) {
       Swal.fire({
         title: titulo,
@@ -136,7 +147,8 @@ export default {
         movil: '',
         departamento: '',
         modalidad: '',
-        avisoLegal: ''
+        avisoLegal: '',
+        comentario: ''
       }
     },
 
@@ -144,6 +156,8 @@ export default {
       // Verificar si los campos requeridos están llenos
       if (this.candidato.apellidos && this.candidato.nombre && this.candidato.email && this.candidato.movil && this.candidato.apellidos && this.candidato.nombre && this.candidato.avisoLegal) {
         try {
+
+          
 
           if (this.candidato.avisoLegal) {
             this.candidato.avisoLegal = "si";

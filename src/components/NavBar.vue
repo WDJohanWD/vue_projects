@@ -18,12 +18,13 @@
                 <li class = "nav-item">
                     <router-link to="/clientes" class="nav-link text-white" exact-active-class="active">Clientes</router-link>
                 </li>
-                <li class = "nav-item">
-                    <router-link to="/contacto" class="nav-link text-white" exact-active-class="active">Contacto</router-link>
-                </li>
                 <li class="nav-item">
                     <router-link to="/empleo" class="nav-link text-white" exact-active-class="active">Empleo</router-link>
                 </li>
+                <li class = "nav-item">
+                    <router-link to="/contacto" class="nav-link text-white" exact-active-class="active">Contacto</router-link>
+                </li>
+
             </ul>
         <input class = "form-control me-4 w-25 ms-auto" type = "search" placeholder = "Buscar" aria-label = "Search">
         <button class = "btn btn-outline-success bg-light" type = "submit" >   <i class="bi bi-search"></i></button>
