@@ -1,7 +1,7 @@
 <template>
   <div class="row">
 
-    <h5 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>GESTIÓN usuarioS</h5>
+    <h5 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>GESTIÓN USUARIOS</h5>
   </div>
   <br>
   <div class="container-fluid border p-4">
@@ -28,26 +28,34 @@
           <span class="input-group-text custom-span me-2">Dirección: </span>
           <input type="text" class="form-control sm w-50" placeholder="Dirección" v-model="usuario.direccion">
           <span class="input-group-text custom-span ms-2 me-2">Email: </span>
-          <input type="email" class="form-control sm w-50" placeholder="Email" v-model="usuario.email">
+          <input type="email" class="form-control sm w-25" placeholder="Email" v-model="usuario.email">
+
+          <span class="input-group-text custom-span me-2 ms-2">Teléfono:</span>
+          <input class="form-control sm w-25" type="text" v-model="usuario.telefono"
+            @blur="validarTelefono(this.usuario.telefono)" placeholder="Teléfono">
         </div>
 
         <div class="input-group-text mb-3">
-          <span class="input-group-text custom-span me-2">Teléfono:</span>
-          <input class="form-control sm w-25" type="text" v-model="usuario.telefono"
-            @blur="validarTelefono(this.usuario.telefono)" placeholder="Teléfono">
-          <span class="input-group-text custom-span me-2 ms-2">Provincia: </span>
-          <select name="provincia" class="form-control sm w-25" v-model="usuario.provincia">
+          
+          <span class="input-group-text custom-span me-2 ">Provincia: </span>
+          <select name="provincia" class="form-control sm " v-model="usuario.provincia">
             <option value="">Provincia</option>
             <option v-for="provincia in provincias" :key="provincia.id" :value="provincia">
               {{ provincia.nm }}
             </option>
           </select>
           <span class="input-group-text custom-span ms-2 me-2">Municipio: </span>
-          <select name="municipio" class="form-control sm w-50" v-model="usuario.municipio">
+          <select name="municipio" class="form-control sm w-100" v-model="usuario.municipio">
             <option value="">Municipio</option>
             <option v-for="municipio in municipiosFiltrados" :key="municipio.id" :value="municipio">
               {{ municipio.nm }}
             </option>
+          </select>
+
+          <span  class="input-group-text custom-span  ms-2 me-2">Tipo:</span>
+          <select  class="form-control sm" v-model="usuario.tipo" name="" id="">
+            <option  :value="usuario" selected="selected">Usuario</option>
+            <option :value="admin">Administrador</option>
           </select>
 
           <input type="checkbox" class="m-2" name="historico" v-model="isChecked">
