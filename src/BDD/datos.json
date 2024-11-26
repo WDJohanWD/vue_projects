@@ -32707,7 +32707,7 @@
       "nm": "Melilla"
     }
   ],
-  "clientes": [
+  "usuarios": [
     {
       "id": "96e3",
       "dni": "18602887G",
@@ -32724,7 +32724,7 @@
         "id": "36058",
         "nm": "Vilaboa"
       },
-      "baja":"",
+      "baja": "",
       "tipo": "usuario",
       "telefono": "653435234"
     },
@@ -32745,7 +32745,7 @@
         "id": "01037",
         "nm": "Arraia-Maeztu"
       },
-     "baja":"",
+      "baja": "",
       "tipo": "usuario"
     },
     {
@@ -32765,7 +32765,7 @@
         "id": "10903",
         "nm": "Alagón del Río"
       },
-      "baja":"",
+      "baja": "",
       "tipo": "usuario"
     },
     {
@@ -32785,7 +32785,7 @@
         "id": "01009",
         "nm": "Asparrena"
       },
-      "baja":"",
+      "baja": "",
       "tipo": "usuario"
     },
     {
@@ -32805,7 +32805,7 @@
         "id": "24006",
         "nm": "Ardón"
       },
-      "baja":"",
+      "baja": "",
       "tipo": "usuario"
     },
     {
@@ -32825,7 +32825,7 @@
         "id": "23009",
         "nm": "Baeza"
       },
-      "baja":"",
+      "baja": "",
       "tipo": "usuario"
     },
     {
@@ -32924,7 +32924,7 @@
         "id": "01003",
         "nm": "Aramaio"
       },
-      "baja": "",
+      "baja": "26/11/2024",
       "telefono": "753268419",
       "tipo": "usuario"
     }
