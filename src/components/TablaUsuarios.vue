@@ -54,8 +54,8 @@
 
           <span  class="input-group-text custom-span  ms-2 me-2">Tipo:</span>
           <select  class="form-control sm" v-model="usuario.tipo" name="" id="">
-            <option  :value="usuario" selected="selected">Usuario</option>
-            <option :value="admin">Administrador</option>
+            <option  value="usuario" selected="selected">Usuario</option>
+            <option value="admin">Administrador</option>
           </select>
 
           <input type="checkbox" class="m-2" name="historico" v-model="isChecked">
