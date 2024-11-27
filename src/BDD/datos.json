@@ -32931,29 +32931,18 @@
   ],
   "candidatos": [
     {
-      "id": "d1cd",
-      "apellidos": "Fernandez",
+      "id": "a6ed",
+      "apellidos": "González",
       "nombre": "Anxo",
-      "email": "AnxoPtro@gmail.com",
-      "movil": "799635241",
+      "email": "estebomba@gmail.com",
+      "movil": "745863291",
       "departamento": {
         "id": "01003",
         "nm": "IT"
       },
-      "modalidad": "",
+      "modalidad": "hibrido",
       "avisoLegal": "si",
       "comentario": ""
-    },
-    {
-      "id": "1a07",
-      "apellidos": "Fernandez",
-      "nombre": "Anxo",
-      "email": "AnxoPutero@gmail.com",
-      "movil": "789654123",
-      "departamento": "",
-      "modalidad": "",
-      "avisoLegal": "si",
-      "comentario": "Anxo es un putero"
     }
   ],
   "departamentos": [

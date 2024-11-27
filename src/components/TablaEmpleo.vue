@@ -68,6 +68,53 @@
         :disabled="!candidato.avisoLegal">Enviar</button>
     </form>
   </div>
+
+
+  <div>
+    <div class="container my-5">
+      <h2 class="mb-4">Gestionar usuarios</h2>
+      <div class="container my-2">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead class="table-info rounded-header">
+              <tr>
+                <th scope="col" class="w-10">Apellidos</th>
+                <th scope="col" class="w-10">Nombre</th>
+                <th scope="col" class="w-10">Móvil</th>
+                <th scope="col" class="w-10">Departamento</th>
+                <th scope="col" class="w-10 text-center">Modalidad</th>
+                <th scope="col" class="pale-yellow table-warning">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="candidato in candidatos" :key="candidato.id">
+                <td class="align-middle ">{{ candidato.apellidos }}</td>
+                <td class="align-middle">{{ candidato.nombre }}</td>
+                <td class="align-middle">{{ candidato.movil }}</td>
+                <td class="align-middle">{{ candidato.departamento.nm }}</td>
+
+                <td class="align-middle">{{ candidato.modalidad }}</td>
+                <td class="text-center align-middle pale-yellow table-warning">
+                  <div>
+                    <button class="btn btn-warning m-2" @click="seleccionaCandidato(candidato)">
+                      <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    
+                    <button class="btn btn-danger m-2" @click="deleteCandidato(candidato.movil)">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </template>
 
 <script>
@@ -97,10 +144,36 @@ export default {
   },
 
   mounted() {
+    this.getCandidatos();
     this.getDepartamentos();
   },
 
   methods: {
+
+    async seleccionaCandidato(candidato) {
+      try {
+        this.limpiarFormulario()
+        const response = await fetch('http://localhost:3000/candidatos');
+        if (!response.ok) {
+          throw new Error('Error en la solicitud: ' + response.statusText);
+        }
+        const candidatos = await response.json();
+
+        // Encontrar el usuario por su DNI
+        const candidatoEncontrado = candidatos.find(c => c.movil === candidato.movil);
+
+
+        if (candidatoEncontrado) {
+          this.candidato = { ...candidatoEncontrado };
+        } else {
+          this.mostrarAlerta('Error', 'usuario no encontrado en el servidor.', 'error');
+        }
+      } catch (error) {
+        console.error(error);
+        this.mostrarAlerta('Error', 'No se pudo cargar el usuario desde el servidor.', 'error');
+      }
+    },
+
     validarTelefono(telefono) {
       if (telefono == '') {
         this.mostrarAlerta('Error', 'El teléfono con formato no valido', 'error');
@@ -195,6 +268,18 @@ export default {
           throw new Error('Error en la solicitud:' + response.statusText);
         }
         this.departamentos = await response.json();
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    async getCandidatos() {
+      try {
+        const response = await fetch('http://localhost:3000/candidatos');
+        if (!response.ok) {
+          throw new Error('Error en la solicitud:' + response.statusText);
+        }
+        this.candidatos = (await response.json()).sort((a, b) => a.apellidos.localeCompare(b.apellidos) || a.nombre.localeCompare(b.nombre));
       } catch (error) {
         console.error(error);
       }

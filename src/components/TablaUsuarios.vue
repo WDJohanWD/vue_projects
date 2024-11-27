@@ -87,7 +87,7 @@
                 <th scope="col" class="w-20">Apellidos</th>
                 <th scope="col" class="w-20">Nombre</th>
                 <th scope="col" class="w-20 text-center">Email</th>
-                <th scope="col" class="w-10">Telefono</th>
+                <th scope="col" class="w-10">Móvil</th>
                 <th scope="col" class="w-10">Tipo</th>
                 <th scope="col" class="w-10 text-center">Fecha Baja</th>
                 <th scope="col" class="pale-yellow table-warning">Acciones</th>
