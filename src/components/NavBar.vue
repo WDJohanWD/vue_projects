@@ -16,7 +16,7 @@
                     <router-link to="/" class="nav-link text-white" exact-active-class="active">Inicio</router-link>
                 </li>
                 <li class = "nav-item">
-                    <router-link to="/usuarios" class="nav-link text-white" exact-active-class="active">usuarios</router-link>
+                    <router-link to="/usuarios" class="nav-link text-white" exact-active-class="active">Usuarios</router-link>
                 </li>
                 <li class="nav-item">
                     <router-link to="/empleo" class="nav-link text-white" exact-active-class="active">Empleo</router-link>
@@ -43,8 +43,8 @@ export default{
 /* Cambiar el color de la clase active */
 .nav-link.active {
     color: #FAD02E !important;
-    font-size: 1.1rem; /* Aumenta un poco el tamaño de la fuente */
-    transition: font-size 0.5s ease; /* con una transición suave */
+    font-size: 1.1rem;
+    transition: font-size 0.5s ease; 
 }
 
 </style>

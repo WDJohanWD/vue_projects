@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <h5 class="mt-3 text-center front-weight-bold"><i class="bi bi-people">TRABAJA CON NOSOTROS</i></h5>
+    <h4 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>TRABAJA CON NOSOTROS <router-link to="/"> <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h4>
   </div>
   <br>
   <div class="container-fluid border p-4">

@@ -1,7 +1,8 @@
 <template>
   <div class="row">
 
-    <h5 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>GESTIÓN USUARIOS</h5>
+    <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>GESTIÓN USUARIOS <router-link to="/"> <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h3>
+    
   </div>
   <br>
   <div class="container-fluid border p-4">
@@ -9,7 +10,7 @@
       <div class="col-10 col-m-6 col-lg-8 mx-auto">
         <div class="input-group-text mb-3">
           <span class="input-group-text custom-span me-2">DNI/NIE:</span>
-          <input type="text" class="form-control sm w-25" placeholder="DNI-NIE" v-model="usuario.dni"
+          <input type="text" class="form-control sm w-25" placeholder="DNI-NIE" v-model="usuario.dni" 
             @blur="validarDNI(this.usuario.dni)" :disabled="editDni">
           <button class="btn btn-outline" type="submit" @click.prevent="buscarUsuario(usuario.dni)"> <i
               class="bi bi-search"></i></button>
