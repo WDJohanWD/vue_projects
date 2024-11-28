@@ -1,6 +1,7 @@
 <template>
   <div class="row">
-    <h4 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>TRABAJA CON NOSOTROS <router-link to="/"> <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h4>
+    <h4 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>TRABAJA CON NOSOTROS <router-link to="/">
+        <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h4>
   </div>
   <br>
   <div class="container-fluid border p-4">
@@ -21,7 +22,7 @@
 
           <span class="input-group-text custom-span ms-2 me-2">Móvil:</span>
           <input class="form-control sm w-25" type="text" required placeholder="Móvil" v-model="candidato.movil"
-            @blur="validarTelefono(this.candidato.movil)">
+            @blur="validarTelefono(this.candidato.movil)" :disabled="editMovil">
 
 
 
@@ -50,9 +51,11 @@
 
         </div>
         <div class="input-group-text mb-3">
-          <span  class="input-group-text custom-span ms-2 me-2" for="comentario">Comentario: </span>
-          <textarea  placeholder="Comentarios (Máximo 256 caracteres)" class="form-control sm w-100" maxlength="256" name="" id="" rows="4" v-model="candidato.comentario"  @blur="validarComentario(this.candidato.comentario)"></textarea>
-          
+          <span class="input-group-text custom-span ms-2 me-2" for="comentario">Comentario: </span>
+          <textarea placeholder="Comentarios (Máximo 256 caracteres)" class="form-control sm w-100" maxlength="256"
+            name="" id="" rows="4" v-model="candidato.comentario"
+            @blur="validarComentario(this.candidato.comentario)"></textarea>
+
         </div>
         <div class="input-group-text mb-3">
 
@@ -72,7 +75,7 @@
 
   <div>
     <div class="container my-5">
-      <h2 class="mb-4">Gestionar usuarios</h2>
+      <h2 class="mb-4">Gestionar candidatos</h2>
       <div class="container my-2">
         <div class="table-responsive">
           <table class="table table-striped">
@@ -99,11 +102,11 @@
                     <button class="btn btn-warning m-2" @click="seleccionaCandidato(candidato)">
                       <i class="fas fa-pencil-alt"></i>
                     </button>
-                    
+
                     <button class="btn btn-danger m-2" @click="deleteCandidato(candidato.movil)">
                       <i class="bi bi-trash"></i>
                     </button>
-                  
+
                   </div>
                 </td>
               </tr>
@@ -135,11 +138,11 @@ export default {
         departamento: '',
         modalidad: '',
         avisoLegal: '',
-        comentario:''
+        comentario: ''
       },
       candidatos: [],
       departamentos: [],
-      categorias: []
+      editMovil: false
     }
   },
 
@@ -159,18 +162,19 @@ export default {
         }
         const candidatos = await response.json();
 
-        // Encontrar el usuario por su DNI
+        // Encontrar el candidato por su DNI
         const candidatoEncontrado = candidatos.find(c => c.movil === candidato.movil);
 
 
         if (candidatoEncontrado) {
+          this.editMovil = true;
           this.candidato = { ...candidatoEncontrado };
         } else {
-          this.mostrarAlerta('Error', 'usuario no encontrado en el servidor.', 'error');
+          this.mostrarAlerta('Error', 'candidato no encontrado en el servidor.', 'error');
         }
       } catch (error) {
         console.error(error);
-        this.mostrarAlerta('Error', 'No se pudo cargar el usuario desde el servidor.', 'error');
+        this.mostrarAlerta('Error', 'No se pudo cargar el candidato desde el servidor.', 'error');
       }
     },
 
@@ -194,9 +198,9 @@ export default {
       }
     },
 
-    validarComentario(comentario){
-      if(comentario.length > 256){
-        this.mostrarAlerta('Error','el comentario no puede sobre pasar 256 caracteres', 'error')
+    validarComentario(comentario) {
+      if (comentario.length > 256) {
+        this.mostrarAlerta('Error', 'el comentario no puede sobre pasar 256 caracteres', 'error')
       }
     },
     mostrarAlerta(titulo, mensaje, icono) {
@@ -223,40 +227,74 @@ export default {
         avisoLegal: '',
         comentario: ''
       }
+      this.editMovil = false;
     },
 
     async grabarCandidato() {
       // Verificar si los campos requeridos están llenos
-      if (this.candidato.apellidos && this.candidato.nombre && this.candidato.email && this.candidato.movil && this.candidato.apellidos && this.candidato.nombre && this.candidato.avisoLegal) {
+      if (this.candidato.apellidos && this.candidato.nombre && this.candidato.email && this.candidato.movil && this.candidato.apellidos
+       && this.candidato.nombre && this.candidato.departamento && this.candidato.modalidad && this.candidato.avisoLegal==true) {
         try {
-
-          
-
-          if (this.candidato.avisoLegal) {
+          if (this.candidato.avisoLegal){
             this.candidato.avisoLegal = "si";
           }
 
-          const crearResponse = await fetch('http://localhost:3000/candidatos', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(this.candidato),
-          });
-
-          if (!crearResponse.ok) {
-            throw new Error('Error al guardar el candidato ' + crearResponse.statusText);
+          const response = await fetch('http://localhost:3000/candidatos');
+          if (!response.ok) {
+            throw new Error('Error al obtener los candidatos: ' + response.statusText);
           }
 
-          const nuevoCandidato = await crearResponse.json();
-          this.candidatos.push(nuevoCandidato);
-          this.mostrarAlerta('Aviso', 'Candidato grabado correctamente', 'success');
-          this.limpiarFormulario();
+          const candidatosExistentes = await response.json();
+
+          let candidatoExistente = candidatosExistentes.find(candidato => candidato.movil === this.candidato.movil);
+
+          if (candidatoExistente) {
+            candidatoExistente = this.candidato;
+            
+            
+            const actualizarResponse = await fetch(`http://localhost:3000/candidatos/${candidatoExistente.id}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+
+              body: JSON.stringify(candidatoExistente),
+            });
+
+            if (!actualizarResponse.ok) {
+              throw new Error('Error al actualizar el candidato: ' + actualizarResponse.statusText);
+            }
+
+            this.mostrarAlerta('Aviso', 'Candidato reactivado correctamente', 'success');
+            this.getCandidatos();
+          } 
+          
+          else {
+            const crearResponse = await fetch('http://localhost:3000/candidatos', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(this.candidato),
+            });
+
+            if (!crearResponse.ok) {
+              throw new Error('Error al guardar el candidato ' + crearResponse.statusText);
+            }
+
+            const nuevoCandidato = await crearResponse.json();
+            this.candidatos.push(nuevoCandidato);
+            this.mostrarAlerta('Aviso', 'Candidato grabado correctamente', 'success');
+            this.limpiarFormulario();
+          }
         } catch (error) {
           console.error(error);
           this.mostrarAlerta('Error', 'No se pudo grabar el candidato.', 'error');
         }
-      } else {
+      } else if (this.candidato.avisoLegal == false) {
+        this.mostrarAlerta('Error', 'Por favor, acepta las Políticas de Privacidad.', 'error');
+      }   
+      else {
         this.mostrarAlerta('Error', 'Por favor, completa todos los campos requeridos.', 'error');
       }
     },
@@ -284,6 +322,51 @@ export default {
         console.error(error);
       }
     },
+
+    async deleteCandidato(movil) {
+      const resultado = await Swal.fire({
+        title: '¿Estás seguro?',
+        text: '¿Deseas eliminar el candidato?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'No, cancelar',
+        cancelButtonColor: '#d33',
+        confirmButtonColor: '#3085d6',
+      })
+
+      if (resultado.isConfirmed) {
+        try {
+
+          const response = await fetch("http://localhost:3000/candidatos");
+          if (!response.ok) {
+            throw new Error("Error en la solicitud: " + response.statusText);
+          }
+
+          const candidatos = await response.json();
+          const candidatoExistente = candidatos.find(candidato => candidato.movil === movil);
+
+          if (candidatoExistente) {
+
+            await fetch(`http://localhost:3000/candidatos/${candidatoExistente.id}`, { // URL interpolada correctamente
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+
+            this.mostrarAlerta("Aviso", "candidato dado de baja correctamente", "success");
+            this.getCandidatos(); // Actualizar lista de candidatos
+
+          } else {
+            this.mostrarAlerta("Error", "candidato no encontrado", "error");
+          }
+        } catch (error) {
+          console.error(error);
+          this.mostrarAlerta("Error", "No se pudo dar de baja al candidato", "error");
+        }
+      }
+    }
   }
 }
 </script>

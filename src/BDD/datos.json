@@ -32931,14 +32931,28 @@
   ],
   "candidatos": [
     {
-      "id": "a6ed",
-      "apellidos": "González",
-      "nombre": "Anxo",
-      "email": "estebomba@gmail.com",
-      "movil": "745863291",
+      "id": "adec",
+      "apellidos": "anxo",
+      "nombre": "anchoa",
+      "email": "chancho@mail.com",
+      "movil": "753629841",
       "departamento": {
-        "id": "01003",
-        "nm": "IT"
+        "id": "01",
+        "nm": "ventas"
+      },
+      "modalidad": "hibrido",
+      "avisoLegal": "si",
+      "comentario": ""
+    },
+    {
+      "id": "ee21",
+      "apellidos": "esteban",
+      "nombre": "estebomba",
+      "email": "estebanco@mail.com",
+      "movil": "777777777",
+      "departamento": {
+        "id": "01002",
+        "nm": "compras"
       },
       "modalidad": "hibrido",
       "avisoLegal": "si",
