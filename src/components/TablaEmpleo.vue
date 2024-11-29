@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <h4 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>TRABAJA CON NOSOTROS <router-link to="/">
-        <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h4>
+    <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>TRABAJA CON NOSOTROS <router-link to="/">
+        <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h3>
   </div>
   <br>
   <div class="container-fluid border p-4">
@@ -231,6 +231,18 @@ export default {
     },
 
     async grabarCandidato() {
+      const resultado = await Swal.fire({
+        title: '¿Estás seguro?',
+        text: '¿Deseas grabar el candidato?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, Grabar',
+        cancelButtonText: 'No, no grabar',
+        cancelButtonColor: '#d33',
+        confirmButtonColor: '#3085d6',
+      })
+
+      if (resultado.isConfirmed) {
       // Verificar si los campos requeridos están llenos
       if (this.candidato.apellidos && this.candidato.nombre && this.candidato.email && this.candidato.movil && this.candidato.apellidos
        && this.candidato.nombre && this.candidato.departamento && this.candidato.modalidad && this.candidato.avisoLegal==true) {
@@ -296,7 +308,7 @@ export default {
       }   
       else {
         this.mostrarAlerta('Error', 'Por favor, completa todos los campos requeridos.', 'error');
-      }
+      }}
     },
 
     async getDepartamentos() {

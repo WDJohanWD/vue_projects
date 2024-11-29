@@ -1,5 +1,5 @@
 <template>
-   <h5 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>Página de Contacto</h5>
+   <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>Página de Contacto</h3>
 </template>
 
 <script>

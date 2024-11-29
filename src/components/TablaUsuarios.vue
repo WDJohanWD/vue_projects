@@ -407,6 +407,18 @@ export default {
     },
 
     async grabarUsuario() {
+      const resultado = await Swal.fire({
+        title: '¿Estás seguro?',
+        text: '¿Deseas grabar el candidato?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, Grabar',
+        cancelButtonText: 'No, no grabar',
+        cancelButtonColor: '#d33',
+        confirmButtonColor: '#3085d6',
+      })
+
+      if (resultado.isConfirmed) {
       // Verificar si los campos requeridos están llenos
       if (this.usuario.dni && this.usuario.apellidos && this.usuario.telefono) {
         try {
@@ -462,7 +474,7 @@ export default {
         }
       } else {
         this.mostrarAlerta('Error', 'Por favor, completa todos los campos requeridos.', 'error');
-      }
+      }}
     },
 
     async eliminarUsuario() {

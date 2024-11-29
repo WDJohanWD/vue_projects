@@ -32927,6 +32927,26 @@
       "baja": "26/11/2024",
       "telefono": "753268419",
       "tipo": "usuario"
+    },
+    {
+      "id": "774e",
+      "dni": "53974821P",
+      "alta": "2024-11-12",
+      "apellidos": "Gonz",
+      "nombre": "Est",
+      "direccion": "Vigo",
+      "email": "izan@gmail.com",
+      "provincia": {
+        "id": "03",
+        "nm": "Alicante/Alacant"
+      },
+      "municipio": {
+        "id": "03003",
+        "nm": "Agres"
+      },
+      "baja": "",
+      "telefono": "759864231",
+      "tipo": "usuario"
     }
   ],
   "candidatos": [
@@ -32937,12 +32957,12 @@
       "email": "chancho@mail.com",
       "movil": "753629841",
       "departamento": {
-        "id": "01",
-        "nm": "ventas"
+        "id": "01003",
+        "nm": "IT"
       },
-      "modalidad": "hibrido",
+      "modalidad": "remoto",
       "avisoLegal": "si",
-      "comentario": ""
+      "comentario": "jguyg"
     },
     {
       "id": "ee21",
@@ -32950,6 +32970,34 @@
       "nombre": "estebomba",
       "email": "estebanco@mail.com",
       "movil": "777777777",
+      "departamento": {
+        "id": "01002",
+        "nm": "compras"
+      },
+      "modalidad": "hibrido",
+      "avisoLegal": "si",
+      "comentario": ""
+    },
+    {
+      "id": "e33b",
+      "apellidos": "Aponte",
+      "nombre": "David",
+      "email": "abuelo12@mail.com",
+      "movil": "748563291",
+      "departamento": {
+        "id": "01004",
+        "nm": "logistica"
+      },
+      "modalidad": "hibrido",
+      "avisoLegal": "si",
+      "comentario": ""
+    },
+    {
+      "id": "3ee2",
+      "apellidos": "moreira",
+      "nombre": "cata",
+      "email": "catamoreira@mail.com",
+      "movil": "746985321",
       "departamento": {
         "id": "01002",
         "nm": "compras"
