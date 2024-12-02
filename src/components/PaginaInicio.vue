@@ -7,12 +7,12 @@
       <button class="btn btn-primary me-2 w-25"><router-link to="/empleo"  class="nav-link text-white" exact-active-class="active"> Gestión Empleo</router-link></button>
     </div>
     <div class="my-5">
-      <button class="btn btn-dark me-2 w-25" disabled>En continuación</button>
-      <button class="btn btn-dark me-2 w-25" disabled>En continuación</button>
+      <button class="btn btn-dark me-2 w-25" disabled>En construción</button>
+      <button class="btn btn-dark me-2 w-25" disabled>En construción</button>
     </div>
     <div class="my-5">
-      <button class="btn btn-dark me-2 w-25" disabled>En continuación</button>
-      <button class="btn btn-dark me-2 w-25" disabled>En continuación</button>
+      <button class="btn btn-dark me-2 w-25" disabled>En construción</button>
+      <button class="btn btn-dark me-2 w-25" disabled>En construción</button>
     </div>
   </div>
 </template>

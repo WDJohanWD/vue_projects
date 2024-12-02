@@ -1,8 +1,9 @@
 <template>
   <div class="row">
 
-    <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>GESTIÓN USUARIOS <router-link to="/"> <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h3>
-    
+    <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>GESTIÓN USUARIOS <router-link to="/">
+        <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h3>
+
   </div>
   <br>
   <div class="container-fluid border p-4">
@@ -10,7 +11,7 @@
       <div class="col-10 col-m-6 col-lg-8 mx-auto">
         <div class="input-group-text mb-3">
           <span class="input-group-text custom-span me-2">DNI/NIE:</span>
-          <input type="text" class="form-control sm w-25" placeholder="DNI-NIE" v-model="usuario.dni" 
+          <input type="text" class="form-control sm w-25" placeholder="DNI-NIE" v-model="usuario.dni"
             @blur="validarDNI(this.usuario.dni)" :disabled="editDni">
           <button class="btn btn-outline" type="submit" @click.prevent="buscarUsuario(usuario.dni)"> <i
               class="bi bi-search"></i></button>
@@ -37,7 +38,7 @@
         </div>
 
         <div class="input-group-text mb-3">
-          
+
           <span class="input-group-text custom-span me-2 ">Provincia: </span>
           <select name="provincia" class="form-control sm " v-model="usuario.provincia">
             <option value="">Provincia</option>
@@ -53,9 +54,9 @@
             </option>
           </select>
 
-          <span  class="input-group-text custom-span  ms-2 me-2">Tipo:</span>
-          <select  class="form-control sm" v-model="usuario.tipo" name="" id="">
-            <option  value="usuario" selected="selected">Usuario</option>
+          <span class="input-group-text custom-span  ms-2 me-2">Tipo:</span>
+          <select class="form-control sm" v-model="usuario.tipo" name="" id="">
+            <option value="usuario" selected="selected">Usuario</option>
             <option value="admin">Administrador</option>
           </select>
 
@@ -419,62 +420,65 @@ export default {
       })
 
       if (resultado.isConfirmed) {
-      // Verificar si los campos requeridos están llenos
-      if (this.usuario.dni && this.usuario.apellidos && this.usuario.telefono) {
-        try {
-          this.usuario.baja = '';
-          // Obtener los usuarios existentes
-          const response = await fetch('http://localhost:3000/usuarios');
-          if (!response.ok) {
-            throw new Error('Error al obtener los usuarios: ' + response.statusText);
-          }
-
-          const usuariosExistentes = await response.json();
-
-          const usuarioExistente = usuariosExistentes.find(usuario => usuario.dni === this.usuario.dni);
-
-          if (usuarioExistente) {
-
-            usuarioExistente.baja = '';
-            const actualizarResponse = await fetch(`http://localhost:3000/usuarios/${usuarioExistente.id}`, {
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(usuarioExistente),
-            });
-
-            if (!actualizarResponse.ok) {
-              throw new Error('Error al actualizar el usuario: ' + actualizarResponse.statusText);
+        // Verificar si los campos requeridos están llenos
+        if (this.usuario.dni && this.usuario.apellidos && this.usuario.telefono) {
+          try {
+            this.usuario.baja = '';
+            // Obtener los usuarios existentes
+            const response = await fetch('http://localhost:3000/usuarios');
+            if (!response.ok) {
+              throw new Error('Error al obtener los usuarios: ' + response.statusText);
             }
 
-            this.mostrarAlerta('Aviso', 'usuario reactivado correctamente', 'success');
-            this.getUsuarios();
-          } else {
-            const crearResponse = await fetch('http://localhost:3000/usuarios', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(this.usuario),
-            });
+            const usuariosExistentes = await response.json();
 
-            if (!crearResponse.ok) {
-              throw new Error('Error al guardar el usuario: ' + crearResponse.statusText);
+            const usuarioExistente = usuariosExistentes.find(usuario => usuario.dni === this.usuario.dni);
+            if (usuarioExistente && usuarioExistente.baja === '') {
+              this.mostrarAlerta('Error', 'El usuario ya existe con este DNI', 'error');
             }
+            else if (usuarioExistente) {
 
-            const nuevousuario = await crearResponse.json();
-            this.usuarios.push(nuevousuario);
-            this.mostrarAlerta('Aviso', 'usuario grabado correctamente', 'success');
-            this.getUsuarios();
+              usuarioExistente.baja = '';
+              const actualizarResponse = await fetch(`http://localhost:3000/usuarios/${usuarioExistente.id}`, {
+                method: 'PUT',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(usuarioExistente),
+              });
+
+              if (!actualizarResponse.ok) {
+                throw new Error('Error al actualizar el usuario: ' + actualizarResponse.statusText);
+              }
+
+              this.mostrarAlerta('Aviso', 'usuario reactivado correctamente', 'success');
+              this.getUsuarios();
+            } else {
+              const crearResponse = await fetch('http://localhost:3000/usuarios', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.usuario),
+              });
+
+              if (!crearResponse.ok) {
+                throw new Error('Error al guardar el usuario: ' + crearResponse.statusText);
+              }
+
+              const nuevousuario = await crearResponse.json();
+              this.usuarios.push(nuevousuario);
+              this.mostrarAlerta('Aviso', 'usuario grabado correctamente', 'success');
+              this.getUsuarios();
+            }
+          } catch (error) {
+            console.error(error);
+            this.mostrarAlerta('Error', 'No se pudo grabar el usuario.', 'error');
           }
-        } catch (error) {
-          console.error(error);
-          this.mostrarAlerta('Error', 'No se pudo grabar el usuario.', 'error');
+        } else {
+          this.mostrarAlerta('Error', 'Por favor, completa todos los campos requeridos.', 'error');
         }
-      } else {
-        this.mostrarAlerta('Error', 'Por favor, completa todos los campos requeridos.', 'error');
-      }}
+      }
     },
 
     async eliminarUsuario() {

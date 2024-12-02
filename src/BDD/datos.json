@@ -32805,8 +32805,8 @@
         "id": "24006",
         "nm": "Ardón"
       },
-      "baja": "",
-      "tipo": "usuario"
+      "baja": "02/12/2024",
+      "tipo": "admin"
     },
     {
       "id": "vx35",
@@ -33003,6 +33003,34 @@
         "nm": "compras"
       },
       "modalidad": "hibrido",
+      "avisoLegal": "si",
+      "comentario": ""
+    },
+    {
+      "id": "1bd3",
+      "apellidos": "Martinex",
+      "nombre": "Paul",
+      "email": "eliot@gmail.com",
+      "movil": "745213698",
+      "departamento": {
+        "id": "01",
+        "nm": "ventas"
+      },
+      "modalidad": "hibrido",
+      "avisoLegal": "si",
+      "comentario": ""
+    },
+    {
+      "id": "cb74",
+      "apellidos": "Garcia",
+      "nombre": "Adrian",
+      "email": "adrigg@mail.com",
+      "movil": "756329841",
+      "departamento": {
+        "id": "01003",
+        "nm": "IT"
+      },
+      "modalidad": "presencial",
       "avisoLegal": "si",
       "comentario": ""
     }

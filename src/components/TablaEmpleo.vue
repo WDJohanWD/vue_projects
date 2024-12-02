@@ -90,7 +90,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="candidato in candidatos" :key="candidato.id">
+              <tr v-for="candidato in candidatosPorPagina" :key="candidato.id">
                 <td class="align-middle ">{{ candidato.apellidos }}</td>
                 <td class="align-middle">{{ candidato.nombre }}</td>
                 <td class="align-middle">{{ candidato.movil }}</td>
@@ -113,6 +113,17 @@
             </tbody>
 
           </table>
+          <div class="d-flex justify-content-center my-3">
+            <button class="btn btn-primary" :disabled="currentPage === 1" @click="paginaAnterior">
+              <i class="bi bi-chevron-left"> </i>
+            </button>
+            <span class="mx-3 align-self-center">Página {{ currentPage }}</span>
+
+            <button class="btn btn-primary" :disabled="currentPage * pageSize >= candidatos.length"
+              @click="siguientePagina">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -142,7 +153,9 @@ export default {
       },
       candidatos: [],
       departamentos: [],
-      editMovil: false
+      editMovil: false,
+      currentPage: 1,
+      pageSize:5
     }
   },
 
@@ -150,8 +163,26 @@ export default {
     this.getCandidatos();
     this.getDepartamentos();
   },
+  computed:{
+    
+  candidatosPorPagina() {
+    const inicio = (this.currentPage - 1) * this.pageSize;
+    return this.candidatos.slice(inicio, inicio + this.pageSize);
+  
+},
 
+  },
   methods: {
+    siguientePagina() {
+      if (this.currentPage * this.pageSize < this.candidatos.length) {
+        this.currentPage++;
+      }
+    },
+    paginaAnterior() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    },
 
     async seleccionaCandidato(candidato) {
       try {
