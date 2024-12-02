@@ -33047,6 +33047,20 @@
       "modalidad": "remoto",
       "avisoLegal": "si",
       "comentario": ""
+    },
+    {
+      "id": "adec",
+      "apellidos": "anxo",
+      "nombre": "anchoa",
+      "email": "chancho@mail.com",
+      "movil": "753629841",
+      "departamento": {
+        "id": "01003",
+        "nm": "IT"
+      },
+      "modalidad": "remoto",
+      "avisoLegal": "si",
+      "comentario": "jguygfyur"
     }
   ],
   "departamentos": [

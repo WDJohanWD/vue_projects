@@ -286,7 +286,7 @@ export default {
           if (!response.ok) {
             throw new Error('Error al obtener los candidatos: ' + response.statusText);
           }
-
+/**
           const candidatosExistentes = await response.json();
 
           let candidatoExistente = candidatosExistentes.find(candidato => candidato.movil === this.candidato.movil);
@@ -311,7 +311,7 @@ export default {
             this.mostrarAlerta('Aviso', 'Candidato reactivado correctamente', 'success');
             this.getCandidatos();
           } 
-          
+          */
           else {
             const crearResponse = await fetch('http://localhost:3000/candidatos', {
               method: 'POST',
