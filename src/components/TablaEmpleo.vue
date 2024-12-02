@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>TRABAJA CON NOSOTROS <router-link to="/">
+    <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-person-workspace"></i> TRABAJA CON NOSOTROS <router-link to="/">
         <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h3>
   </div>
   <br>
@@ -16,7 +16,7 @@
           <input type="text" class="form-control sm w-50" required placeholder="Nombre" v-model="candidato.nombre">
         </div>
         <div class="input-group-text mb-3">
-          <span class="input-group-text custom-span ms-2 me-2">Email: </span>
+          <span class="input-group-text custom-span me-2">Email: </span>
           <input type="email" class="form-control sm w-50" required placeholder="Email" v-model="candidato.email"
             @blur="validarEmail(this.candidato.email)">
 
@@ -29,7 +29,7 @@
         </div>
 
         <div class="input-group-text mb-3">
-          <span class="input-group-text custom-span ms-2 me-2">Departamentos</span>
+          <span class="input-group-text custom-span me-2">Departamentos</span>
           <select name="departamento" class="form-control sm w-25 ms-2" v-model="candidato.departamento" required>
             <option value="" disabled>Departamentos</option>
             <option v-for="departamento in departamentos" :key="departamento.id" :value="departamento">
@@ -40,7 +40,7 @@
           <span class="input-group-text custom-span ms-2 me-2">Modalidades </span>
           <div class="m-auto">
             <input class="mx-2" type="radio" name="modalidad" v-model="candidato.modalidad" value="remoto" id="remoto"
-              checked><label for="remoto">Remoto</label>
+              ><label for="remoto">Remoto</label>
             <input class="mx-2" type="radio" name="modalidad" v-model="candidato.modalidad" value="hibrido"
               id="hibrido"><label for="hibrido">Hibrido</label>
 
@@ -51,7 +51,7 @@
 
         </div>
         <div class="input-group-text mb-3">
-          <span class="input-group-text custom-span ms-2 me-2" for="comentario">Comentario: </span>
+          <span class="input-group-text custom-span  me-2" for="comentario">Comentario: </span>
           <textarea placeholder="Comentarios (Máximo 256 caracteres)" class="form-control sm w-100" maxlength="256"
             name="" id="" rows="4" v-model="candidato.comentario"
             @blur="validarComentario(this.candidato.comentario)"></textarea>
@@ -59,11 +59,11 @@
         </div>
         <div class="input-group-text mb-3">
 
-          <span class="input-group-text custom-span ms-2 me-2">CV (PDF) </span>
+          <span class="input-group-text custom-span  me-2">CV (PDF) </span>
           <input type="file" class="form-control sm w-100">
 
         </div>
-        <input type="checkbox" class="text-align-left" name="" id="" v-model="candidato.avisoLegal" required>He leido y
+        <input type="checkbox" class="text-align-left" name="" id="" v-model="candidato.avisoLegal" required> He leido y
         acepto la <router-link to="/privacidad">Politica de privacidad</router-link>
 
       </div>
@@ -75,7 +75,7 @@
 
   <div>
     <div class="container my-5">
-      <h2 class="mb-4">Gestionar candidatos</h2>
+      <h2 class="mb-4"><i class="bi bi-pencil-square"></i> Gestionar candidatos</h2>
       <div class="container my-2">
         <div class="table-responsive">
           <table class="table table-striped">

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
 
-    <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>GESTIÓN USUARIOS <router-link to="/">
+    <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i> GESTIÓN USUARIOS <router-link to="/">
         <button class="btn btn-customb"><i class="bi bi-arrow-return-left "></i></button></router-link></h3>
 
   </div>
@@ -78,7 +78,7 @@
 
   <div>
     <div class="container my-5">
-      <h2 class="mb-4">Lista de Datos</h2>
+      <h2 class="mb-4"><i class="bi bi-card-list"></i> Lista de Datos</h2>
       <div class="container my-2">
         <div class="table-responsive">
           <table class="table table-striped">

@@ -32962,7 +32962,7 @@
       },
       "modalidad": "remoto",
       "avisoLegal": "si",
-      "comentario": "jguyg"
+      "comentario": "jguygfyur"
     },
     {
       "id": "ee21",
@@ -33031,6 +33031,20 @@
         "nm": "IT"
       },
       "modalidad": "presencial",
+      "avisoLegal": "si",
+      "comentario": ""
+    },
+    {
+      "id": "5d61",
+      "apellidos": "Elio",
+      "nombre": "Oxi",
+      "email": "Oxiel@mail.com",
+      "movil": "745698321",
+      "departamento": {
+        "id": "01",
+        "nm": "ventas"
+      },
+      "modalidad": "remoto",
       "avisoLegal": "si",
       "comentario": ""
     }

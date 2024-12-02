@@ -1,5 +1,5 @@
 <template>
-  <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-people"></i>Página de Inicio</h3>
+  <h3 class="mt-3 text-center front-weight-bold"><i class="bi bi-wrench-adjustable"></i> Panel de Gestión</h3>
 
   <div class="grid-box">
     <div class="my-5">
