@@ -278,6 +278,7 @@ export default {
       if (this.candidato.apellidos && this.candidato.nombre && this.candidato.email && this.candidato.movil && this.candidato.apellidos
        && this.candidato.nombre && this.candidato.departamento && this.candidato.modalidad && this.candidato.avisoLegal==true) {
         try {
+          delete this.candidato.id;
           if (this.candidato.avisoLegal){
             this.candidato.avisoLegal = "si";
           }

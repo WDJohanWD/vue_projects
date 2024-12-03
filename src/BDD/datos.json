@@ -32951,20 +32951,6 @@
   ],
   "candidatos": [
     {
-      "id": "adec",
-      "apellidos": "anxo",
-      "nombre": "anchoa",
-      "email": "chancho@mail.com",
-      "movil": "753629841",
-      "departamento": {
-        "id": "01003",
-        "nm": "IT"
-      },
-      "modalidad": "remoto",
-      "avisoLegal": "si",
-      "comentario": "jguygfyur"
-    },
-    {
       "id": "ee21",
       "apellidos": "esteban",
       "nombre": "estebomba",
@@ -33049,7 +33035,7 @@
       "comentario": ""
     },
     {
-      "id": "adec",
+      "id": "25a5",
       "apellidos": "anxo",
       "nombre": "anchoa",
       "email": "chancho@mail.com",
