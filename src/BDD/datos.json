@@ -32745,7 +32745,7 @@
         "id": "01037",
         "nm": "Arraia-Maeztu"
       },
-      "baja": "",
+      "baja": "05/12/2024",
       "tipo": "usuario"
     },
     {
@@ -33035,7 +33035,21 @@
       "comentario": ""
     },
     {
-      "id": "25a5",
+      "id": "ae3b",
+      "apellidos": "Aponte",
+      "nombre": "David",
+      "email": "abuelo12@mail.com",
+      "movil": "748563291",
+      "departamento": {
+        "id": "01002",
+        "nm": "compras"
+      },
+      "modalidad": "hibrido",
+      "avisoLegal": "si",
+      "comentario": ""
+    },
+    {
+      "id": "6cb5",
       "apellidos": "anxo",
       "nombre": "anchoa",
       "email": "chancho@mail.com",
@@ -33044,7 +33058,7 @@
         "id": "01003",
         "nm": "IT"
       },
-      "modalidad": "remoto",
+      "modalidad": "hibrido",
       "avisoLegal": "si",
       "comentario": "jguygfyur"
     }
